@@ -1,0 +1,58 @@
+#root {
+    height: 100vh;
+}
+
+.table-and-list {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+.listograms {
+    height: 100%;
+    overflow-y: scroll;
+    margin-left: 20px;
+}
+
+.list-container {
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    &:hover {
+        background-color: tan;
+        cursor: pointer;
+    }
+
+    &.selected {
+        background-color: tan;
+    }
+}
+
+.inner-list-container {
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    pointer-events: none;
+}
+
+.listogram-card {
+    border-bottom: 1px solid grey;
+    padding-bottom: 20px;
+}
+
+.list-name {
+    margin-right: 10px;
+    max-width: 80px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-bar {
+    height: 10px;
+    display: inline-block;
+    background-color: peru;
+}
+
+.click-mask {
+    pointer-events: none;
+}
