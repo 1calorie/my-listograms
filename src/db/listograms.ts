@@ -1,5 +1,10 @@
-let listograms  = require('./listogram_data.json');
+let listograms  = require('./caniuse.json');
 
 export function getListograms() {
-    return listograms;
+  let concatenated = listograms;
+  for (let i = 0; i < 10; i ++) {
+    concatenated = concatenated.concat(listograms);
+  }
+
+  return concatenated;
 }

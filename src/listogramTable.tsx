@@ -29,7 +29,15 @@ export function ListogramTable({
         const selectedRows = new Set<number>();
         Object.keys(selected).map(key => {
             const value = selected[key];
-            grouped[key][value].forEach(idx => selectedRows.add(idx));
+            if (selectedRows.size === 0) {
+                grouped[key][value].forEach(idx => selectedRows.add(idx));
+            } else {
+                selectedRows.forEach(row => {
+                    if (!grouped[key][value].has(row)) {
+                        selectedRows.delete(row);
+                    }
+                });
+            }
         });
 
         return selectedRows;
